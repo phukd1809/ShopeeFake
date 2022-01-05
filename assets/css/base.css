@@ -1,0 +1,134 @@
+:root
+{
+    --white-color: #fff;
+    --black-color:#000;
+    --text-color:#333;
+    --primary-color: #ee4b2b;
+    /* --primary-cpolor-rgba: rgba(238, 75, 43); */
+    --border-color: #dbdbdb;
+}
+*
+{
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+html
+{
+    line-height: 16px;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+.grid
+{
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+.grid-full-width
+{
+    width: 100%;
+}
+.grid-row
+{
+    display: flex;
+    flex-wrap: wrap;
+}
+/* Animation*/
+@keyframes fadeIn{
+    from
+    {
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes Growth
+{
+    from{
+        opacity: 0;
+        transform: scale(0);
+    }
+    to
+    {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes griwth
+{
+    from {
+        transform: scale(var(--griwth-from));
+    }
+    to
+    {
+        transform: scale(var(--griwth-to));
+    }
+}
+/* Modal*/
+.modal
+{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    animation: fadeIn linear 0.2s;
+}
+.modal-overlay
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0 ,0, 0.4);
+}
+.modal-body
+{
+    --griwth-from: 0.8;
+    --griwth-to: 1;
+    margin: auto;
+    position: relative;
+    z-index: 1;
+    animation: griwth linear 0.2s;
+}
+.btn
+{
+    height: 36px;
+    min-width: 142px;
+    border: none;
+    text-decoration: none;
+    border-radius: 2px;
+    font-size: 15px;
+    background-color: var(--white-color);
+    padding: 0 12px;
+    outline: none;
+    cursor: pointer;
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn.btn-normal:hover
+{
+    background-color: rgba(0,0,0,0.05);
+}
+.btn.btn-primary
+{
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+.btn.btn-disabled
+{
+    cursor: default;
+    filter: brightness(80%);
+    background-color: #c3c3c3;
+    color: #999;
+}
+.btn.btn-size-s
+{
+    height: 32px;
+    padding: 0 8px;
+}
